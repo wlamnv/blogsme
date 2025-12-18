@@ -705,17 +705,97 @@ header {
     color: #b91c1c;
 }
 
-@media (max-width: 640px) {
-    .itinerary-table {
-        font-size: 0.85rem;
-    }
+/* Vertical Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem 0;
+}
 
-    .itinerary-table th,
-    .itinerary-table td {
-        padding: 0.5rem;
-    }
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: hsl(var(--primary));
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin-left: -1px;
+}
 
-    .period-cell {
-        width: 60px;
-    }
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 12px;
+    background-color: white;
+    border: 4px solid hsl(var(--primary));
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-content {
+    padding: 1.5rem;
+    background-color: white;
+    position: relative;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid hsl(var(--border));
+}
+
+.timeline-date {
+    font-weight: 700;
+    color: hsl(var(--primary));
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 1.1rem;
+}
+
+.timeline-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-desc {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.95rem;
+}
+
+.itinerary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.itinerary-day-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.itinerary-day-card:hover {
+    transform: translateY(-5px);
+}
+
+.itinerary-day-card h4 {
+    color: hsl(var(--primary));
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
