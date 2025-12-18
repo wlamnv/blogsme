@@ -331,6 +331,7 @@ header {
     font-size: 0.95rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -378,13 +379,179 @@ header {
 }
 
 /* Footer */
-footer {
-    margin-top: auto;
-    border-top: 1px solid hsl(var(--border));
-    padding: 1.5rem 0;
+.site-footer {
+    background: linear-gradient(135deg, #1a0b2e 0%, #3d1a5a 50%, #1a0b2e 100%);
+    color: white;
+    padding: 3rem 0 0 0;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+}
+
+/* Background Geometric Shapes (simulated) */
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.footer-contact {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-contact h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.contact-divider {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+}
+
+.footer-contact p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.btn-coffee {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffd700;
+    color: #000;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.btn-coffee:hover {
+    transform: scale(1.05);
+    background-color: #ffef00;
+    color: #000;
+}
+
+.btn-coffee svg {
+    margin-right: 8px;
+}
+
+.footer-qrs {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.qr-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.qr-code-wrapper {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.qr-code-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qr-label {
+    width: 100%;
     text-align: center;
-    color: hsl(var(--muted-foreground));
+    padding: 0.6rem 0;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    min-width: 160px;
+}
+
+.facebook-label {
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+}
+
+.zalo-label {
+    background: linear-gradient(to right, #0068ff, #0056d2);
+}
+
+.discord-label {
+    background: linear-gradient(to right, #4f46e5, #6366f1);
+}
+
+.coffee-label {
+    background: linear-gradient(to right, #f59e0b, #fbbf24);
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
     font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-divider {
+        margin: 0 auto 1.5rem auto;
+    }
+
+    .footer-qrs {
+        justify-content: center;
+    }
 }
 
 /* Form Styles */
