@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog du lịch tự túc</title>
+    <meta name="description" content="A travel blog showcasing destinations around the world.">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Using Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <!-- MapPin Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Sài Gòn, Việt Nam</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <!-- <a href="caption-generator.html">AI Captioner</a> -->
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container hero">
+            <h1>Blog của Lâm</h1>
+            <p>
+                Web này là nơi chia sẻ những trải nghiệm, những chuyến đi của em. Cảm ơn mọi người đã ghé và đọc ♥
+                <br>
+                Đừng ngần ngại xách balo lên và đi! Nợ tí xíu cũng được nhưng mà có kỉ niệm hehe...
+            </p>
+        </section>
+
+        <!-- Map Section -->
+        <section class="container map-section">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Cùng khám phá thế giới</h2>
+            <div class="map-placeholder">
+                <div class="map-placeholder-text">Interactive Map of Attractions</div>
+            </div>
+        </section>
+
+        <!-- Destinations Section -->
+        <section class="container destinations-section">
+            <!-- <div class="section-header">
+                <h2 class="section-title">Các điểm đến</h2>
+                <a href="caption-generator.html" class="btn btn-outline" style="gap: 0.5rem; text-decoration: none;">
+                    AI Caption Tool ✨
+                </a>
+            </div> -->
+
+            <div class="grid">
+                <!-- Card 1: Eiffel Tower -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="images/petronat.jpg" alt="Petronas Twin Towers in Kuala Lumpur, Malaysia.">
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Malaysia</h3>
+                        <p class="card-subtitle">Kualum Lumpur - Penang</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-desc">
+
+                            Lịch trình tự túc 5 ngày 4 đêm khám phá 2 thành phố của Malaysia</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="destination-detail.html" class="btn btn-primary full-width">
+                            Đọc thêm
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 0.5rem;">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2: Kinkaku-ji -->
+                <!-- <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1706132604889-eaec56922a73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxreW90byUyMHRlbXBsZXxlbnwwfHx8fDE3NjU4ODg4MTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Kinkaku-ji (Golden Pavilion) in Kyoto, Japan.">
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Kinkaku-ji</h3>
+                        <p class="card-subtitle">Japan</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-desc">A stunning Zen Buddhist temple in Kyoto, covered in gold leaf.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary full-width">
+                            Explore
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 0.5rem;">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article> -->
+
+                <!-- Card 3: Machu Picchu -->
+                <!-- <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1664387518989-bb1d8574f078?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYWNodSUyMHBpY2NodXxlbnwwfHx8fDE3NjU5NjczMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="The ancient ruins of Machu Picchu in Peru.">
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Machu Picchu</h3>
+                        <p class="card-subtitle">Peru</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-desc">An ancient Incan citadel set high in the Andes Mountains.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary full-width">
+                            Explore
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 0.5rem;">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article> -->
+
+                <!-- Card 4: Santorini -->
+                <!-- <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1580225495234-00e84e19c85e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzYW50b3JpbmklMjBncmVlY2V8ZW58MHx8fHwxNzY1OTY0ODgyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Whitewashed buildings overlooking the sea in Santorini, Greece.">
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Santorini</h3>
+                        <p class="card-subtitle">Greece</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-desc">Famous for its dramatic views, stunning sunsets, and whitewashed villages.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary full-width">
+                            Explore
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 0.5rem;">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article> -->
+
+                <!-- Card 5: Statue of Liberty -->
+                <!-- <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1600250005701-fabbe037e0ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzdGF0dWUlMjBsaWJlcnR5fGVufDB8fHx8MTc2NTg4NDEwOXww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="The Statue of Liberty in New York, USA.">
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Statue of Liberty</h3>
+                        <p class="card-subtitle">USA</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-desc">A colossal neoclassical sculpture on Liberty Island in New York Harbor.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary full-width">
+                            Explore
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 0.5rem;">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article> -->
+
+                <!-- Card 6: Queenstown -->
+                <!-- <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1705927161510-0e84f8e1901e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxxdWVlbnN0b3duJTIwbmV3emVhbGFuZHxlbnwwfHx8fDE3NjU5NjczMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Lake Wakatipu and the Remarkables mountain range in Queenstown, New Zealand.">
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Queenstown</h3>
+                        <p class="card-subtitle">New Zealand</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-desc">The adventure capital of the world, nestled by the stunning Lake Wakatipu.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary full-width">
+                            Explore
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" style="margin-left: 0.5rem;">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div> -->
+
+                <!-- Pagination -->
+                <!-- <div class="pagination">
+                    <a href="#" class="page-item active">1</a>
+                    Future pages could be added here
+                </div> -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 wlamnv. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

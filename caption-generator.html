@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Caption Generator - Wanderlust Chronicles</title>
+    <meta name="description" content="Generate compelling captions for your travel photos with AI.">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Using Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <!-- MapPin Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Wanderlust Chronicles</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="caption-generator.html" style="color: hsl(var(--primary));">AI Captioner</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container" style="padding: 4rem 1rem;">
+            <div style="max-width: 42rem; margin: 0 auto; text-align: center; margin-bottom: 3rem;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">AI Caption Generator</h1>
+                <p style="font-size: 1.125rem; color: hsl(var(--muted-foreground));">
+                    Bring your travel photos to life! Upload an image of a destination, and our AI will craft a
+                    compelling caption to capture the moment.
+                </p>
+            </div>
+
+            <div style="max-width: 42rem; margin: 0 auto;">
+                <div class="card">
+                    <div class="card-content" style="padding: 1.5rem;">
+                        <form class="space-y-6">
+                            <div class="space-y-2">
+                                <label for="photo-upload" class="label">Upload an Image</label>
+                                <input id="photo-upload" type="file" accept="image/*" class="input">
+                            </div>
+
+                            <!-- Placeholder for preview (hidden by default in pure HTML unless populated) -->
+                            <!--
+                            <div class="relative w-full aspect-video rounded-md overflow-hidden border">
+                                <img src="placeholder.jpg" alt="Preview" style="width:100%; height:100%; object-fit: contain;">
+                            </div>
+                            -->
+
+                            <button type="button" class="btn btn-primary full-width" style="height: 3rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" style="margin-right: 0.5rem;">
+                                    <path d="m21 15-4-4 4-4" />
+                                    <path d="m3 9 4 4-4 4" />
+                                    <path d="M21 11v2" />
+                                    <path d="M3 13v-2" />
+                                    <path d="M11 21h2" />
+                                    <path d="M11 3h2" />
+                                    <path d="M15 21l-3-18" />
+                                    <path d="M9 21 12 3" />
+                                </svg>
+                                Generate Caption
+                            </button>
+                        </form>
+
+                        <!-- Demo of Generated State -->
+                        <!--
+                        <div class="generated-caption">
+                            <h3 class="font-headline" style="font-weight: 600; font-size: 1.125rem; margin-bottom: 0.5rem;">Generated Caption:</h3>
+                            <div class="caption-box">
+                                <p class="caption-text">"Sunset over Paris is always a good idea. #EiffelTower #TravelGoals"</p>
+                                <button class="btn-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+                                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Wanderlust Chronicles. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

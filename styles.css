@@ -1,0 +1,554 @@
+/* Global Styles & Variables */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:opsz,wght@7..72,400;600;700&display=swap');
+
+:root {
+    --background: 60 30% 97%;
+    --foreground: 93 10% 25%;
+    --card: 60 30% 100%;
+    --card-foreground: 93 10% 25%;
+    --primary: 93 25% 40%;
+    --primary-foreground: 93 25% 95%;
+    --secondary: 93 15% 90%;
+    --secondary-foreground: 93 25% 40%;
+    --muted: 93 15% 94%;
+    --muted-foreground: 93 10% 50%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 93 10% 88%;
+    --radius: 0.5rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-color: hsl(var(--border));
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Literata', serif;
+    color: hsl(var(--foreground));
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2sease;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Layout Utilities */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    border-bottom: 1px solid hsl(var(--border));
+    background-color: hsla(60, 30%, 97%, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    font-family: 'Literata', serif;
+}
+
+.logo svg {
+    color: hsl(var(--primary));
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: hsl(var(--primary));
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: hsl(var(--muted-foreground));
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+/* Map Section */
+.map-section {
+    padding: 3rem 1rem;
+}
+
+.map-placeholder {
+    height: 400px;
+    width: 100%;
+    background-color: hsl(var(--muted));
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--muted-foreground));
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.map-placeholder-text {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+}
+
+/* Destinations Section */
+.destinations-section {
+    padding: 3rem 1rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    height: 2.5rem;
+    padding: 0 1rem;
+    transition: all 0.2s;
+}
+
+.btn-outline {
+    border: 1px solid hsl(var(--input));
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+}
+
+.btn-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Badge */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: 1px solid transparent;
+}
+
+/* Card Grid */
+.grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 3.75rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .map-placeholder {
+        height: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Destination Card */
+.card {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 12rem;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-header {
+    padding: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.card-subtitle {
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+}
+
+.card-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    flex-grow: 1;
+}
+
+.card-desc {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-footer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+/* .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+} */
+
+.full-width {
+    width: 100%;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.page-item {
+    height: 2.25rem;
+    width: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    font-size: 0.875rem;
+}
+
+.page-item.active {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.page-item:not(.active):hover {
+    background-color: hsl(var(--secondary));
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    border-top: 1px solid hsl(var(--border));
+    padding: 1.5rem 0;
+    text-align: center;
+    color: hsl(var(--muted-foreground));
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+.label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.input {
+    display: flex;
+    height: 2.5rem;
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+    background-color: transparent;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s;
+}
+
+.input[type="file"] {
+    padding-top: 0.4rem;
+    /* Adjust alignment for file input text */
+}
+
+.input:focus {
+    outline: none;
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 2px hsl(var(--ring));
+}
+
+.space-y-6>*+* {
+    margin-top: 1.5rem;
+}
+
+.space-y-2>*+* {
+    margin-top: 0.5rem;
+}
+
+.generated-caption {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid hsl(var(--border));
+}
+
+.caption-box {
+    position: relative;
+    padding: 1rem;
+    background-color: hsl(var(--muted));
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+}
+
+.caption-text {
+    color: hsl(var(--muted-foreground));
+    font-style: italic;
+}
+
+.btn-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem;
+    border-radius: var(--radius);
+    background: transparent;
+    border: none;
+    color: hsl(var(--muted-foreground));
+}
+
+.btn-icon:hover {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+
+.itinerary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed;
+    /* Ensures consistent column widths across different tables */
+}
+
+.itinerary-table th,
+.itinerary-table td {
+    border: 1px solid hsl(var(--border));
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: middle;
+    word-wrap: break-word;
+    /* Prevents long text from breaking layout */
+}
+
+.itinerary-day-header {
+    background-color: hsl(var(--primary)) !important;
+    color: white !important;
+    text-align: center !important;
+    font-size: 1.1rem;
+    font-family: 'Literata', serif;
+}
+
+.itinerary-table thead tr:last-child th {
+    background-color: hsl(var(--muted));
+    font-weight: 600;
+}
+
+.period-cell {
+    font-weight: 700;
+    text-align: center !important;
+    width: 80px;
+    color: #333;
+}
+
+.period-morning {
+    background-color: #d1d5db;
+}
+
+.period-afternoon {
+    background-color: #22d3ee;
+}
+
+.period-evening {
+    background-color: #f87171;
+}
+
+.row-afternoon td:first-child,
+.row-afternoon td:not(.period-cell) {
+    background-color: rgba(34, 211, 238, 0.05);
+}
+
+.row-evening td:first-child,
+.row-evening td:not(.period-cell) {
+    background-color: rgba(248, 113, 113, 0.05);
+}
+
+.time-slot {
+    font-weight: 700;
+    width: 100px;
+}
+
+.time-slot-cyan {
+    color: #0891b2;
+}
+
+.time-slot-red {
+    color: #b91c1c;
+}
+
+@media (max-width: 640px) {
+    .itinerary-table {
+        font-size: 0.85rem;
+    }
+
+    .itinerary-table th,
+    .itinerary-table td {
+        padding: 0.5rem;
+    }
+
+    .period-cell {
+        width: 60px;
+    }
+}
