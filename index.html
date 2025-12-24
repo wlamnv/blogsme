@@ -11,6 +11,13 @@
     <!-- Using Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Literata:opsz,wght@7..72,400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 
 <body>
@@ -48,9 +55,7 @@
         <!-- Map Section -->
         <section class="container map-section">
             <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Cùng khám phá thế giới</h2>
-            <div class="map-placeholder">
-                <div class="map-placeholder-text">Interactive Map of Attractions</div>
-            </div>
+            <div id="map"></div>
         </section>
 
         <!-- Destinations Section -->
@@ -63,32 +68,35 @@
             </div> -->
 
             <div class="grid">
-                <!-- Card 1: Eiffel Tower -->
-                <article class="card">
-                    <div class="card-image">
-                        <img src="images/petronat.jpg" alt="Petronas Twin Towers in Kuala Lumpur, Malaysia.">
-                    </div>
-                    <div class="card-header">
-                        <h3 class="card-title">Malaysia</h3>
-                        <p class="card-subtitle">Kualum Lumpur - Penang</p>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-desc">
-
-                            Lịch trình tự túc 5 ngày 4 đêm khám phá 2 thành phố của Malaysia</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="destination-detail.html" class="btn btn-primary full-width">
-                            Đọc thêm
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" style="margin-left: 0.5rem;">
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
+                <!-- Card 1: Malaysia -->
+                <a href="destination-detail.html" class="card-link"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="images/petronat.jpg" alt="Petronas Twin Towers in Kuala Lumpur, Malaysia.">
+                        </div>
+                        <div class="card-header">
+                            <h3 class="card-title">Malaysia</h3>
+                            <p class="card-subtitle">Kualum Lumpur - Penang</p>
+                        </div>
+                        <div class="card-content">
+                            <p class="card-desc">
+                                Lịch trình tự túc 5 ngày 4 đêm khám phá 2 thành phố của Malaysia
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="btn btn-primary full-width">
+                                Đọc thêm
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" style="margin-left: 0.5rem;">
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </article>
+                </a>
 
                 <!-- Card 2: Kinkaku-ji -->
                 <!-- <article class="card">
@@ -270,6 +278,78 @@
             <p>Copyright © 2025 wlamnv</p>
         </div>
     </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([10.7769, 106.7009], 4); // Center on SE Asia (Saigon focus)
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Saigon (Home) marker
+        const saigonIcon = L.divIcon({
+            className: 'saigon-marker',
+            iconSize: [14, 14],
+            iconAnchor: [7, 7]
+        });
+
+        const saigonMarker = L.marker([10.7769, 106.7009], { icon: saigonIcon }).addTo(map);
+        saigonMarker.bindTooltip({
+            permanent: true,
+            direction: 'right',
+            offset: [10, 0]
+        });
+
+        // Visited locations data
+        const locations = [
+            {
+                name: "Penang",
+                coords: [5.4141, 100.3288],
+                url: "destination-detail.html#penang"
+            },
+            {
+                name: "Kuala Lumpur",
+                coords: [3.1390, 101.6869],
+                url: "destination-detail.html#kl"
+            }
+        ];
+
+        // Custom icon for visited spots
+        const redDotIcon = L.divIcon({
+            className: 'custom-marker',
+            iconSize: [12, 12],
+            iconAnchor: [6, 6]
+        });
+
+        // Add markers
+        locations.forEach(loc => {
+            const marker = L.marker(loc.coords, { icon: redDotIcon }).addTo(map);
+
+            // Add tooltip
+            marker.bindTooltip(loc.name, {
+                permanent: false,
+                direction: 'top',
+                offset: [0, -5]
+            });
+
+            // Handle click
+            marker.on('click', () => {
+                window.location.href = loc.url;
+            });
+        });
+
+        // Responsive map adjustment
+        window.addEventListener('resize', () => {
+            map.invalidateSize();
+        });
+    </script>
 </body>
 
 </html>

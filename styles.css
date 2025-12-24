@@ -180,6 +180,45 @@ header {
     backdrop-filter: blur(4px);
 }
 
+/* Map Styling */
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.custom-marker {
+    background: #ff4d4d;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.6);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.custom-marker:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 12px rgba(255, 77, 77, 0.8);
+    z-index: 1000 !important;
+}
+
+.saigon-marker {
+    background: #4d94ff;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(77, 148, 255, 0.6);
+    cursor: default;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.saigon-marker:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 12px rgba(77, 148, 255, 0.8);
+    z-index: 1000 !important;
+}
+
 /* Destinations Section */
 .destinations-section {
     padding: 3rem 1rem;
@@ -257,6 +296,7 @@ header {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    #map,
     .map-placeholder {
         height: 600px;
     }
